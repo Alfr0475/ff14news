@@ -38,8 +38,10 @@
         {foreach from=$list_data item=data}
         <tr>
           <td class="hidden-xs">{$data['date']}</td>
-          <td><a href="{$data['blog_url']}">{$data['blog']}</a></td>
-          <td><a href="{$data['link']}">{$data['title']}</a></td>
+          <td class="visible-xs"><a href="{$data['blog_url']}">{$data['blog']}</a></td>
+          <td class="visible-xs"><a href="{$data['link']}">{$data['title']}</a></td>
+          <td class="hidden-xs"><a href="{$data['blog_url']}" target="_blank">{$data['blog']}</a></td>
+          <td class="hidden-xs"><a href="{$data['link']}" target="_blank">{$data['title']}</a></td>
         </tr>
         {/foreach}
       </table>
