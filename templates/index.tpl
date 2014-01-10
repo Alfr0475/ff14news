@@ -46,6 +46,7 @@
     </div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    {literal}
     <script type="text/JavaScript">
       $(function(){
       //ページ内のaタグ群を取得。aTagsに配列として代入。
@@ -73,5 +74,6 @@
       ga('send', 'pageview');
 
     </script>
+    {/literal}
   </body>
 </html>
