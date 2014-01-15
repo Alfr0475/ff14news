@@ -34,16 +34,22 @@
       </div>
     </nav>
     <div class="container" style="padding-top:60px;">
-      <table class="table table-striped">
-        {foreach from=$list_data item=data}
-        <tr>
-          <td class="hidden-xs">{$data['date']}</td>
-          <td class="visible-xs"><a href="{$data['blog_url']}">{$data['blog']}</a></td>
-          <td class="visible-xs"><a href="{$data['link']}">{$data['title']}</a></td>
-          <td class="hidden-xs"><a href="{$data['blog_url']}" target="_blank">{$data['blog']}</a></td>
-          <td class="hidden-xs"><a href="{$data['link']}" target="_blank">{$data['title']}</a></td>
-        </tr>
-        {/foreach}
+      <table class="table table-striped table-hover">
+        <tbody>
+          {foreach from=$list_data item=data}
+          <tr class="hidden-xs" onClick="JavaScript:window.open('{$data['link']}', '_blank');" style="cursor: pointer;" onMouseOver="this.style.color='#F00';" onMouseOut="this.style.color='#333';">
+            <td>{$data['date']}</td>
+            <td>{$data['blog']}</td>
+            <td>{$data['title']}</td>
+          </tr>
+          {/foreach}
+          {foreach from=$list_data item=data}
+          <tr class="visible-xs" onClick="JavaScript:location.href='{$data['link']}'">
+            <td class="visible-xs">{$data['blog']}</td>
+            <td class="visible-xs">{$data['title']}</td>
+          </tr>
+          {/foreach}
+        </tbody>
       </table>
     </div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
